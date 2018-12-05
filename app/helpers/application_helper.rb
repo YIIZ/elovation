@@ -9,4 +9,8 @@ module ApplicationHelper
   def format_time(time)
     "#{time_ago_in_words(time)} ago"
   end
+
+  def setup_by
+    ENV['SETUP_BY'] || 'Elovation'
+  end
 end

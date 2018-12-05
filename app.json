@@ -29,6 +29,14 @@
       "description": "If basic auth is enabled, set your password, otherwise leave blank",
       "value": "",
       "required": false
+    },
+    "ADMIN_BASIC_AUTH_NAME": {
+      "value": "admin",
+      "required": false
+    },
+    "ADMIN_BASIC_AUTH_PASSWORD": {
+      "value": "",
+      "required": false
     }
   },
   "scripts": {

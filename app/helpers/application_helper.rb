@@ -1,9 +1,12 @@
 module ApplicationHelper
-  def gravatar_url(player, options = {})
-    options.assert_valid_keys :size
-    size = options[:size] || 32
-    digest = player.email.blank? ? "0" * 32 : Digest::MD5.hexdigest(player.email)
+  def gravatar_url(email, size)
+    digest = email.blank? ? "0" * 32 : Digest::MD5.hexdigest(email)
     "https://www.gravatar.com/avatar/#{digest}?d=mm&s=#{size}"
+  end
+
+  def gravatar_image_tag(player, size: 24, **options)
+    # retina
+    image_tag(gravatar_url(player.email, size*2), { **options, size: size })
   end
 
   def format_time(time)
